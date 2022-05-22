@@ -29,21 +29,15 @@ def twitterBot():
         driver.implicitly_wait(5)
 
         # Input password
-        # pWord = driver.find_element(By.XPATH, '//input[@autocomplete="current-password"')
-        # pWord.send_keys('xxxx')
-        # driver.implicitly_wait(5)
         pWord = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//input[@autocomplete="current-password"]'))
         )
         pWord.send_keys('xxxxxxx')
 
-        #Login
+        #Login to account
         lButton = driver.find_element(By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div')
         lButton.click()
 
-        # for article ingit articles:
-        #     header = article.find_element(By.CLASS_NAME, "entry-summary")
-        #     print(header.text)
     except:
         driver.quit()
 
